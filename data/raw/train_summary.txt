@@ -1,0 +1,95 @@
+Markdown table for numactl.hw.ml4.p9.20210819.txt:
+| Node | CPUs | Memory Size (MB) | Memory Free (MB) |
+|------|------|-----------------|-----------------|
+| 0 | 80 | 550555 | 371211 |
+| 1 | 80 | 551318 | 426842 |
+| 2 | 72 | 496589 | 357248 |
+| 3 | 72 | 496589 | 334104 |
+| 4 | 72 | 496588 | 295963 |
+| 5 | 80 | 550870 | 381567 |
+| 6 | 80 | 550854 | 389853 |
+| 7 | 72 | 496103 | 352912 |
+
+Classification: Good NUMA allocation
+Explanation:
+All conditions are met, ensuring balanced NUMA allocation.
+
+Markdown table for numactl.hw.ml4.p10.20240312.txt:
+| Node | CPUs | Memory Size (MB) | Memory Free (MB) |
+|------|------|-----------------|-----------------|
+| 0 | 52 | 2048424 | 1944847 |
+| 1 | 48 | 1740044 | 1649811 |
+| 2 | 52 | 2048726 | 1938871 |
+| 3 | 52 | 2048728 | 1950686 |
+| 4 | 52 | 2010620 | 1905547 |
+| 5 | 52 | 2010876 | 1917898 |
+| 6 | 48 | 1856154 | 1755951 |
+| 7 | 48 | 1855174 | 1736886 |
+
+Classification: Good NUMA allocation
+Explanation:
+All conditions are met, ensuring balanced NUMA allocation.
+
+Markdown table for numactl.hw.ml4.p10.20240512.txt:
+| Node | CPUs | Memory Size (MB) | Memory Free (MB) |
+|------|------|-----------------|-----------------|
+| 0 | 96 | 1837404 | 1717577 |
+| 1 | 96 | 1838003 | 1766872 |
+| 2 | 96 | 1908077 | 1807720 |
+| 3 | 64 | 594829 | 465216 |
+| 4 | 104 | 2055639 | 1926467 |
+| 5 | 96 | 2070223 | 1947162 |
+| 6 | 96 | 2069711 | 1915990 |
+| 7 | 88 | 1445434 | 1250825 |
+| 8 | 96 | 2069711 | 1932494 |
+| 9 | 96 | 2070223 | 1950960 |
+| 10 | 96 | 2069713 | 1952612 |
+| 11 | 96 | 1900917 | 1800987 |
+| 12 | 96 | 1878155 | 1726584 |
+| 13 | 96 | 1878155 | 1801102 |
+| 14 | 96 | 1878155 | 1759421 |
+| 15 | 96 | 955019 | 806322 |
+
+Classification: Bad NUMA allocation
+Explanation:
+Condition 2 violated: Minimum memory size in any node (594829 MB) is less than half of the maximum memory size in any node (2070223 MB). Violating nodes: [3].
+
+Markdown table for numactl.hw.ml4.p10.20240513.txt:
+| Node | CPUs | Memory Size (MB) | Memory Free (MB) |
+|------|------|-----------------|-----------------|
+| 0 | 96 | 1837404 | 1696863 |
+| 1 | 96 | 1838003 | 1753690 |
+| 2 | 96 | 1908077 | 1793385 |
+| 3 | 64 | 594829 | 458666 |
+| 4 | 104 | 2055639 | 1901671 |
+| 5 | 96 | 2070223 | 1914570 |
+| 6 | 96 | 2069711 | 1910994 |
+| 7 | 88 | 1445434 | 1248919 |
+| 8 | 96 | 2069711 | 1923697 |
+| 9 | 96 | 2070223 | 1933175 |
+| 10 | 96 | 2069713 | 1946051 |
+| 11 | 96 | 1900917 | 1760675 |
+| 12 | 96 | 1878155 | 1703460 |
+| 13 | 96 | 1878155 | 1741164 |
+| 14 | 96 | 1878155 | 1757894 |
+| 15 | 96 | 955019 | 764816 |
+
+Classification: Bad NUMA allocation
+Explanation:
+Condition 2 violated: Minimum memory size in any node (594829 MB) is less than half of the maximum memory size in any node (2070223 MB). Violating nodes: [3].
+
+Markdown table for numactl.hw.ml4.p10.20240610.txt:
+| Node | CPUs | Memory Size (MB) | Memory Free (MB) |
+|------|------|-----------------|-----------------|
+| 0 | 48 | 204484 | 119449 |
+| 1 | 48 | 204782 | 147682 |
+| 2 | 48 | 204779 | 149638 |
+| 3 | 48 | 204525 | 147461 |
+| 16 | 0 | 409200 | 397068 |
+| 17 | 0 | 408312 | 397368 |
+
+Classification: Bad NUMA allocation
+Explanation:
+Condition 1 violated: Minimum CPUs in any node (0) is less than half of the maximum CPUs in any node (48). Violating nodes: [16, 17].
+Condition 2 violated: Minimum memory size in any node (204484 MB) is less than half of the maximum memory size in any node (409200 MB). Violating nodes: [0].
+Condition 3 violated: At least one node is assigned only memory or only CPUs. Violating nodes: [16, 17].

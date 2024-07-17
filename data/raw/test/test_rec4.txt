@@ -1,0 +1,19 @@
+available: 4 nodes (4-7)
+node 4 cpus: 0 1 2 3 8 9 10 11 16 17 18 19 24 25 26 27
+node 4 size: 255585 MB
+node 4 free: 252441 MB
+node 5 cpus: 32 33 34 35 40 41 42 43 48 49 50 51 56 57 58 59 64 65 66 67
+node 5 size: 319657 MB
+node 5 free: 317613 MB
+node 6 cpus: 72 73 74 75 80 81 82 83
+node 6 size: 127864 MB
+node 6 free: 127111 MB
+node 7 cpus: 88 89 90 91 96 97 98 99 104 105 106 107 112 113 114 115 120 121 122 123
+node 7 size: 318659 MB
+node 7 free: 310080 MB
+node distances:
+node   4   5   6   7
+  4:  10  20  20  20
+  5:  20  10  20  20
+  6:  20  20  10  20
+  7:  20  20  20  10
