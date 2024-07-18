@@ -1,6 +1,6 @@
 # Guidelines for AI assistants to analyze NUMA Allocation data in Tables
 
-This Markdown file provides a detailed explanation of the `numactl -H` command, breaks down the example output, and shows how to transform the data into a CSV file for AI analysis.
+This Markdown file provides a detailed explanation of the `numactl -H` command, breaks down the example output, and shows how to transform the data into a Markdown file for AI analysis.
 
 NUMA Allocation refers to the process of assigning memory to specific nodes within a NUMA system. This involves determining which memory blocks will be used by which processors, aiming to optimize memory access times based on the system's architecture.
 
