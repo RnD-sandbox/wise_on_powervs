@@ -1,0 +1,121 @@
+task_description:
+  This skill provides the ability to classify if a numa allocation
+  is good or bad for the performance of a power virtual server instance or lpar. This
+  is done by analyzing numactl -H command output's node layout and distance matrix.
+created_by: IBM
+seed_examples:
+  - question:
+      What are the three conditions for the NUMA allocation to ensure good performance
+      of Power virtual server instances?
+    answer:
+      "To ensure good performance NUMA placement should satisfy 3 conditions.
+      1. MIN(cpus_count) >= (MAX(cpus_count) / 2 )
+      2. MIN(memory_size) >= (MAX(memory_size) / 2)
+      3. No node should be assigned only memory or only cpus"
+  - question: "A good numa allocation must satisfy all the following conditions:
+      1. MIN(cpus_count) greater than or equal to (MAX(cpus_count) / 2)
+      2. MIN(memory_size) greater than or equal to (MAX(memory_size) / 2)
+      3. All cpus_count, memory_size and memory_free can have a value of 0 simultaneously.
+      Any other scenario where they are assigned a value of 0 is unacceptable.
+      Evaluate if the following transformed numactl -H command output shows a good numa allocation.
+      ```markdown
+      | node_ids | cpus_count | memory_size | memory_free |
+      |----------|------------|-------------|-------------|
+      | 0 | 80 | 550555 MB | 371211 MB |
+      | 1 | 80 | 551318 MB | 426842 MB |
+      | 2 | 72 | 496589 MB | 357248 MB |
+      | 3 | 72 | 496589 MB | 334104 MB |
+      | 4 | 72 | 496588 MB | 295963 MB |
+      | 5 | 80 | 550870 MB | 381567 MB |
+      | 6 | 80 | 550854 MB | 389853 MB |
+      | 7 | 72 | 496103 MB | 352912 MB |```"
+    answer: "```EVALUATION:
+      This is a good numa allocation
+      EXPLANATION:A good numa allocation must satisfy the following conditions:
+      1. MIN(cpus_count) greater than or equal to (MAX(cpus_count) / 2)
+      2. MIN(memory_size) greater than or equal to (MAX(memory_size) / 2)
+      3. No node should be assigned only memory or only CPUs
+      Condition 1 satisfied. MIN(cpus_count) = 72, MAX(cpus_count) = 80, and 72 >= 40.0.
+      Condition 2 satisfied. MIN(memory_size) = 496103 MB, MAX(memory_size) = 551318
+      MB, and 496103 MB >= 275659.0.
+      Condition 3 satisfied. All nodes have both CPUs and memory.```"
+  - question: "A good numa allocation must satisfy all the following conditions:
+      1. MIN(cpus_count) greater than or equal to (MAX(cpus_count) / 2)
+      2. MIN(memory_size) greater than or equal to (MAX(memory_size) / 2)
+      3. All cpus_count, memory_size and memory_free can have a value of 0 simultaneously. Any other scenario where they are assigned a value of 0 is unacceptable.
+      Evaluate if the following transformed numactl -H command output shows a good numa allocation.
+      ```markdown
+      | node_ids | cpus_count | memory_size | memory_free |
+      |----------|------------|-------------|-------------|
+      | 0 | 52 | 2048424 MB | 1944847 MB |
+      | 1 | 48 | 1740044 MB | 1649811 MB |
+      | 2 | 52 | 2048726 MB | 1938871 MB |
+      | 3 | 52 | 2048728 MB | 1950686 MB |
+      | 4 | 52 | 2010620 MB | 1905547 MB |
+      | 5 | 52 | 2010876 MB | 1917898 MB |
+      | 6 | 48 | 1856154 MB | 1755951 MB |
+      | 7 | 48 | 1855174 MB | 1736886 MB |```"
+    answer: "```EVALUATION:
+      This is a good numa allocation
+      EXPLANATION:A good numa allocation must satisfy the following conditions:
+      1. MIN(cpus_count) greater than or equal to (MAX(cpus_count) / 2)
+      2. MIN(memory_size) greater than or equal to (MAX(memory_size) / 2)
+      3. No node should be assigned only memory or only CPUs
+      Condition 1 satisfied. MIN(cpus_count) = 48, MAX(cpus_count) = 52, and 48 >= 26.0.
+      Condition 2 satisfied. MIN(memory_size) = 1740044 MB, MAX(memory_size) = 2048728
+      MB, and 1740044 MB >= 1024364.0.
+      Condition 3 satisfied. All nodes have both CPUs and memory.```"
+  - question: "A good numa allocation must satisfy all the following conditions:
+      1. MIN(cpus_count) greater than or equal to (MAX(cpus_count) / 2)
+      2. MIN(memory_size) greater than or equal to (MAX(memory_size) / 2)
+      3. All cpus_count, memory_size and memory_free can have a value of 0 simultaneously.
+      Any other scenario where they are assigned a value of 0 is unacceptable.Evaluate if the following transformed numactl -H command output shows a good numa allocation.
+      ```markdown
+      | node_ids | cpus_count | memory_size | memory_free |
+      |----------|------------|-------------|-------------|
+      | 0 | 96 | 1837404 MB | 1696863 MB |
+      | 1 | 96 | 1838003 MB | 1753690 MB |
+      | 2 | 96 | 1908077 MB | 1793385 MB |
+      | 3 | 64 | 594829 MB | 458666 MB |
+      | 4 | 104 | 2055639 MB | 1901671 MB |
+      | 5 | 96 | 2070223 MB | 1914570 MB |
+      | 6 | 96 | 2069711 MB | 1910994 MB |
+      | 7 | 88 | 1445434 MB | 1248919 MB |
+      | 8 | 96 | 2069711 MB | 1923697 MB |
+      | 9 | 96 | 2070223 MB | 1933175 MB |
+      | 10 | 96 | 2069713 MB | 1946051 MB |
+      | 11 | 96 | 1900917 MB | 1760675 MB |
+      | 12 | 96 | 1878155 MB | 1703460 MB |
+      | 13 | 96 | 1878155 MB | 1741164 MB |
+      | 14 | 96 | 1878155 MB | 1757894 MB |
+      | 15 | 96 | 955019 MB | 764816 MB |```"
+    answer: "```EVALUATION:
+      This is a bad numa allocation
+      EXPLANATION:A good numa allocation must satisfy the following conditions:
+      1. MIN(cpus_count) greater than or equal to (MAX(cpus_count) / 2)
+      2. MIN(memory_size) greater than or equal to (MAX(memory_size) / 2)
+      3. No node should be assigned only memory or only CPUs
+      Condition 1 satisfied. MIN(cpus_count) = 64, MAX(cpus_count) = 104, and 64 >= 52.0.
+      Condition 2 violated. MIN(memory_size) = 594829 MB, MAX(memory_size) = 2070223 MB, and 594829 MB < 1035111.5.
+      Condition 3 satisfied. All nodes have both CPUs and memory.```"
+  - question: "A good numa allocation must satisfy all the following conditions:
+      1. MIN(cpus_count) greater than or equal to (MAX(cpus_count) / 2)
+      2. MIN(memory_size) greater than or equal to (MAX(memory_size) / 2)
+      3. All cpus_count, memory_size and memory_free can have a value of 0 simultaneously. Any other scenario where they are assigned a value of 0 is unacceptable.
+      Evaluate if the following transformed numactl -H command output shows a good numa allocation.
+      ```markdown
+      | node_ids | cpus_count | memory_size | memory_free |
+      |----------|------------|-------------|-------------|
+      | 0 | 48 | 204484 MB | 119449 MB |
+      | 1 | 48 | 204782 MB | 147682 MB |
+      | 2 | 48 | 204779 MB | 149638 MB |
+      | 3 | 48 | 204525 MB | 147461 MB |```"
+    answer: "```EVALUATION:
+      This is a bad numa allocation
+      EXPLANATION:A good numa allocation must satisfy the following conditions:
+      1. MIN(cpus_count) greater than or equal to (MAX(cpus_count) / 2)
+      2. MIN(memory_size) greater than or equal to (MAX(memory_size) / 2)
+      3. No node should be assigned only memory or only CPUs
+      Condition 1 satisfied. MIN(cpus_count) = 48, MAX(cpus_count) = 48, and 48 >= 24.0.
+      Condition 2 violated. MIN(memory_size) = 204484 MB, MAX(memory_size) = 409200 MB, and 204484 MB < 204600.0.
+      Condition 3 satisfied. All nodes have both CPUs and memory.```"
