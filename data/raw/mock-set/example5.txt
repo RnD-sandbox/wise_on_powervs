@@ -1,0 +1,15 @@
+available: 3 nodes (0-2)
+node 0 cpus: 0 1
+node 0 size: 4096 MB
+node 0 free: 2048 MB
+node 1 cpus: 2 3 4 5
+node 1 size: 12288 MB
+node 1 free: 6144 MB
+node 2 cpus: 6 7 8 9 10
+node 2 size: 20480 MB
+node 2 free: 10240 MB
+node distances:
+node 0 1 2
+0: 10 20 20
+1: 20 10 20
+2: 20 20 10

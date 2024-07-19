@@ -1,0 +1,252 @@
+Evaluate if the NUMA allocation in the provided markdown table satisfies the following conditions for a good allocation:
+1. MIN(cpu count) >= (MAX(cpu count) / 2)
+2. MIN(memory size) >= (MAX(memory size) / 2)
+3. cpu count and memory size must not be 0
+
+| node_ids | cpus_count | memory_size | memory_free |
+|----------|------------|-------------|-------------|
+| 0 | 5 | 20480 MB | 10240 MB |
+| 1 | 5 | 20480 MB | 10240 MB |
+| 2 | 3 | 8192 MB | 4096 MB |
+
+Does the above NUMA allocation meet all the specified conditions?
+
+**Expected AI Assistant response**:
+```
+EVALUATION:
+This is a bad numa allocation
+
+EXPLANATION:
+Condition 1 satisfied. MIN(cpus_count) = 3, MAX(cpus_count) = 5, and 3 >= 2.5.
+Condition 2 violated. MIN(memory_size) = 8192 MB, MAX(memory_size) = 20480 MB, and 8192 MB < 10240.0.
+Condition 3 satisfied. All nodes have both CPUs and memory.
+```
+2. -------------------------------------------------------------------
+
+Evaluate if the NUMA allocation in the provided markdown table satisfies the following conditions for a good allocation:
+1. MIN(cpu count) >= (MAX(cpu count) / 2)
+2. MIN(memory size) >= (MAX(memory size) / 2)
+3. cpu count and memory size must not be 0
+
+| node_ids | cpus_count | memory_size | memory_free |
+|----------|------------|-------------|-------------|
+| 0 | 8 | 32768 MB | 16384 MB |
+| 1 | 8 | 32768 MB | 16000 MB |
+
+Does the above NUMA allocation meet all the specified conditions?
+
+
+**Expected AI Assistant response**:
+```
+EVALUATION:
+This is a good numa allocation
+
+EXPLANATION:
+Condition 1 satisfied. MIN(cpus_count) = 8, MAX(cpus_count) = 8, and 8 >= 4.0.
+Condition 2 satisfied. MIN(memory_size) = 32768 MB, MAX(memory_size) = 32768 MB, and 32768 MB >= 16384.0.
+Condition 3 satisfied. All nodes have both CPUs and memory.
+```
+3 -------------------------------------------------------------------
+
+Evaluate if the NUMA allocation in the provided markdown table satisfies the following conditions for a good allocation:
+1. MIN(cpu count) >= (MAX(cpu count) / 2)
+2. MIN(memory size) >= (MAX(memory size) / 2)
+3. cpu count and memory size must not be 0
+
+| node_ids | cpus_count | memory_size | memory_free |
+|----------|------------|-------------|-------------|
+| 0 | 3 | 8192 MB | 4096 MB |
+| 1 | 9 | 49152 MB | 24576 MB |
+
+Does the above NUMA allocation meet all the specified conditions?
+
+
+**Expected AI Assistant response**:
+```
+EVALUATION:
+This is a bad numa allocation
+
+EXPLANATION:
+Condition 1 violated. MIN(cpus_count) = 3, MAX(cpus_count) = 9, and 3 < 4.5.
+Condition 2 violated. MIN(memory_size) = 8192 MB, MAX(memory_size) = 49152 MB, and 8192 MB < 24576.0.
+Condition 3 satisfied. All nodes have both CPUs and memory.
+```
+4 -------------------------------------------------------------------
+
+Evaluate if the NUMA allocation in the provided markdown table satisfies the following conditions for a good allocation:
+1. MIN(cpu count) >= (MAX(cpu count) / 2)
+2. MIN(memory size) >= (MAX(memory size) / 2)
+3. cpu count and memory size must not be 0
+
+| node_ids | cpus_count | memory_size | memory_free |
+|----------|------------|-------------|-------------|
+| 0 | 2 | 4096 MB | 2048 MB |
+| 1 | 4 | 12288 MB | 6144 MB |
+| 2 | 5 | 20480 MB | 10240 MB |
+
+Does the above NUMA allocation meet all the specified conditions?
+
+
+**Expected AI Assistant response**:
+```
+EVALUATION:
+This is a bad numa allocation
+
+EXPLANATION:
+Condition 1 violated. MIN(cpus_count) = 2, MAX(cpus_count) = 5, and 2 < 2.5.
+Condition 2 violated. MIN(memory_size) = 4096 MB, MAX(memory_size) = 20480 MB, and 4096 MB < 10240.0.
+Condition 3 satisfied. All nodes have both CPUs and memory.
+```
+5. -------------------------------------------------------------------
+
+Evaluate if the NUMA allocation in the provided markdown table satisfies the following conditions for a good allocation:
+1. MIN(cpu count) >= (MAX(cpu count) / 2)
+2. MIN(memory size) >= (MAX(memory size) / 2)
+3. cpu count and memory size must not be 0
+
+| node_ids | cpus_count | memory_size | memory_free |
+|----------|------------|-------------|-------------|
+| 0 | 6 | 16384 MB | 8192 MB |
+| 1 | 4 | 8192 MB | 4096 MB |
+
+Does the above NUMA allocation meet all the specified conditions?
+
+
+**Expected AI Assistant response**:
+```
+EVALUATION:
+This is a good numa allocation
+
+EXPLANATION:
+Condition 1 satisfied. MIN(cpus_count) = 4, MAX(cpus_count) = 6, and 4 >= 3.0.
+Condition 2 satisfied. MIN(memory_size) = 8192 MB, MAX(memory_size) = 16384 MB, and 8192 MB >= 8192.0.
+Condition 3 satisfied. All nodes have both CPUs and memory.
+```
+6 -------------------------------------------------------------------
+You are AI assistant for Power Virtual Server support professionals. You are a cautious assistant. You carefully follow instructions. You are helpful and harmless. You follow ethical guidelines and promote positive behaviour. You analyse the markdown data tables to give short and precise answers for the questions asked. 
+Evaluate if the NUMA allocation in the provided markdown table satisfies the following conditions for a good allocation:
+1. MIN(cpu count) >= (MAX(cpu count) / 2)
+2. MIN(memory size) >= (MAX(memory size) / 2)
+3. cpu count and memory size must not be 0
+
+| node_ids | cpus_count | memory_size | memory_free |
+|----------|------------|-------------|-------------|
+| 0 | 6 | 16384 MB | 8096 MB |
+| 1 | 8 | 32768 MB | 16000 MB |
+
+Does the above NUMA allocation meet all the specified conditions?
+
+
+**Expected AI Assistant response**:
+```
+EVALUATION:
+This is a good numa allocation
+
+EXPLANATION:
+Condition 1 satisfied. MIN(cpus_count) = 6, MAX(cpus_count) = 8, and 6 >= 4.0.
+Condition 2 satisfied. MIN(memory_size) = 16384 MB, MAX(memory_size) = 32768 MB, and 16384 MB >= 16384.0.
+Condition 3 satisfied. All nodes have both CPUs and memory.
+```
+7 -------------------------------------------------------------------
+You are AI assistant for Power Virtual Server support professionals. You are a cautious assistant. You carefully follow instructions. You are helpful and harmless. You follow ethical guidelines and promote positive behaviour. You analyse the markdown data tables to give short and precise answers for the questions asked. Evaluate if the NUMA allocation in the provided markdown table satisfies the following conditions for a good allocation:
+1. MIN(cpu count) >= (MAX(cpu count) / 2)
+2. MIN(memory size) >= (MAX(memory size) / 2)
+3. cpu count and memory size must not be 0
+
+| node_ids | cpus_count | memory_size | memory_free |
+|----------|------------|-------------|-------------|
+| 0 | 4 | 8192 MB | 4096 MB |
+| 1 | 6 | 16384 MB | 8192 MB |
+| 2 | 6 | 24576 MB | 12288 MB |
+
+Does the above NUMA allocation meet all the specified conditions?
+
+
+**Expected AI Assistant response**:
+```
+EVALUATION:
+This is a bad numa allocation
+
+EXPLANATION:
+Condition 1 satisfied. MIN(cpus_count) = 4, MAX(cpus_count) = 6, and 4 >= 3.0.
+Condition 2 violated. MIN(memory_size) = 8192 MB, MAX(memory_size) = 24576 MB, and 8192 MB < 12288.0.
+Condition 3 satisfied. All nodes have both CPUs and memory.
+```
+8 -------------------------------------------------------------------
+
+Evaluate if the NUMA allocation in the provided markdown table satisfies the following conditions for a good allocation:
+1. MIN(cpu count) >= (MAX(cpu count) / 2)
+2. MIN(memory size) >= (MAX(memory size) / 2)
+3. cpu count and memory size must not be 0
+
+| node_ids | cpus_count | memory_size | memory_free |
+|----------|------------|-------------|-------------|
+| 0 | 8 | 32768 MB | 16000 MB |
+| 1 | 7 | 24576 MB | 12288 MB |
+
+Does the above NUMA allocation meet all the specified conditions?
+
+
+**Expected AI Assistant response**:
+```
+EVALUATION:
+This is a good numa allocation
+
+EXPLANATION:
+Condition 1 satisfied. MIN(cpus_count) = 7, MAX(cpus_count) = 8, and 7 >= 4.0.
+Condition 2 satisfied. MIN(memory_size) = 24576 MB, MAX(memory_size) = 32768 MB, and 24576 MB >= 16384.0.
+Condition 3 satisfied. All nodes have both CPUs and memory.
+```
+9. -------------------------------------------------------------------
+
+Evaluate if the NUMA allocation in the provided markdown table satisfies the following conditions for a good allocation:
+1. MIN(cpu count) >= (MAX(cpu count) / 2)
+2. MIN(memory size) >= (MAX(memory size) / 2)
+3. cpu count and memory size must not be 0
+
+| node_ids | cpus_count | memory_size | memory_free |
+|----------|------------|-------------|-------------|
+| 0 | 7 | 24576 MB | 12288 MB |
+| 1 | 6 | 24576 MB | 12288 MB |
+
+Does the above NUMA allocation meet all the specified conditions?
+
+
+**Expected AI Assistant response**:
+```
+EVALUATION:
+This is a good numa allocation
+
+EXPLANATION:
+Condition 1 satisfied. MIN(cpus_count) = 6, MAX(cpus_count) = 7, and 6 >= 3.5.
+Condition 2 satisfied. MIN(memory_size) = 24576 MB, MAX(memory_size) = 24576 MB, and 24576 MB >= 12288.0.
+Condition 3 satisfied. All nodes have both CPUs and memory.
+```
+10 -------------------------------------------------------------------
+
+Evaluate if the NUMA allocation in the provided markdown table satisfies the following conditions for a good allocation:
+1. MIN(cpu count) >= (MAX(cpu count) / 2)
+2. MIN(memory size) >= (MAX(memory size) / 2)
+3. cpu count and memory size must not be 0
+
+| node_ids | cpus_count | memory_size | memory_free |
+|----------|------------|-------------|-------------|
+| 0 | 9 | 36864 MB | 18432 MB |
+| 1 | 3 | 12288 MB | 6144 MB |
+| 2 | 6 | 24576 MB | 12288 MB |
+
+Does the above NUMA allocation meet all the specified conditions?
+
+
+**Expected AI Assistant response**:
+```
+EVALUATION:
+This is a bad numa allocation
+
+EXPLANATION:
+Condition 1 violated. MIN(cpus_count) = 3, MAX(cpus_count) = 9, and 3 < 4.5.
+Condition 2 violated. MIN(memory_size) = 12288 MB, MAX(memory_size) = 36864 MB, and 12288 MB < 18432.0.
+Condition 3 satisfied. All nodes have both CPUs and memory.
+```
+-------------------------------------------------------------------
+

@@ -110,12 +110,12 @@ A numa allocation is good only when all three conditions are true.
 ```markdown
 | node_ids | cpus_count | memory_size | memory_free |
 |----------|------------|-------------|-------------|
-| 0        | 8          | 16384 MB    | 8000 MB     |
+| 0        | 8          | 15384 MB    | 8000 MB     |
 | 1        | 8          | 32768 MB    | 15872 MB    |
 ```
 - **Evaluation**:
   - Condition 1 satisfied: MIN(cpus_count) = 8, MAX(cpus_count) = 8, and 8 >= (8 / 2).
-  - Condition 2 violated: MIN(memory_size) = 16384 MB, MAX(memory_size) = 32768 MB, and 16384 MB < (32768 / 2). MIN(memory_size) must be at least 16384 MB.
+  - Condition 2 violated: MIN(memory_size) = 15384 MB, MAX(memory_size) = 32768 MB, and 15384 MB < (32768 / 2). MIN(memory_size) must be at least 16384 MB.
   - Condition 3 satisfied: Both nodes have CPUs and memory.
 
 #### Bad NUMA Allocation Example 3:

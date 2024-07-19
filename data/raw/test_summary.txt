@@ -1,3 +1,5 @@
+11.
+
 Markdown table for test_rec1.txt:
 | Node | CPUs | Memory Size (MB) | Memory Free (MB) |
 |------|------|-----------------|-----------------|
@@ -23,6 +25,8 @@ Explanation:
 Condition 1 violated: Minimum CPUs in any node (16) is less than half of the maximum CPUs in any node (96). Violating nodes: [2, 6].
 Condition 2 violated: Minimum memory size in any node (682328 MB) is less than half of the maximum memory size in any node (2083265 MB). Violating nodes: [6].
 
+12. 
+
 Markdown table for test_rec2.txt:
 | Node | CPUs | Memory Size (MB) | Memory Free (MB) |
 |------|------|-----------------|-----------------|
@@ -40,6 +44,8 @@ Explanation:
 Condition 1 violated: Minimum CPUs in any node (8) is less than half of the maximum CPUs in any node (40). Violating nodes: [6].
 Condition 2 violated: Minimum memory size in any node (196404 MB) is less than half of the maximum memory size in any node (982021 MB). Violating nodes: [6].
 
+13.
+
 Markdown table for test_rec3.txt:
 | Node | CPUs | Memory Size (MB) | Memory Free (MB) |
 |------|------|-----------------|-----------------|
@@ -51,6 +57,8 @@ Markdown table for test_rec3.txt:
 Classification: Good NUMA allocation
 Explanation:
 All conditions are met, ensuring balanced NUMA allocation.
+
+14.
 
 Markdown table for test_rec4.txt:
 | Node | CPUs | Memory Size (MB) | Memory Free (MB) |
@@ -64,6 +72,8 @@ Classification: Bad NUMA allocation
 Explanation:
 Condition 1 violated: Minimum CPUs in any node (8) is less than half of the maximum CPUs in any node (20). Violating nodes: [6].
 Condition 2 violated: Minimum memory size in any node (127864 MB) is less than half of the maximum memory size in any node (319657 MB). Violating nodes: [6].
+
+15.
 
 Markdown table for test_rec5.txt:
 | Node | CPUs | Memory Size (MB) | Memory Free (MB) |
